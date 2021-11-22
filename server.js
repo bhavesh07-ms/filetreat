@@ -3,8 +3,6 @@ const path = require('path');
 const app = express();
 const connectDB = require('./config/db')
 
-const cors = require('cors');
-
 const PORT = process.env.PORT || 3000;
 
 connectDB();
@@ -27,6 +25,8 @@ app.use(express.json());
 app.use('/api/files',require('./routes/files'));
 
 app.use('/files',require('./routes/show'))
+
+
 
 app.use('/files/download',require('./routes/download'))
 
